@@ -133,7 +133,7 @@ contract Campaign{
     }
 
     // If the campaign is expired and not completely funded, Investors can withdraw their funds
-    function getRefund() external onlyInvestor contractExpired {
+    function getRefund() external onlyInvestor campaignExpired {
         require(TotalAmountOfFundRaised != FundingGoal,"Withdraw has been diabled as the funding goal is met");
         bool success = IERC20(CrowdfundTokenAddress).transferFrom(address(this), msg.sender, investors[msg.sender]);
         require(success);
