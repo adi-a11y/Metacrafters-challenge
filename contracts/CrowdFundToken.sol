@@ -53,7 +53,7 @@ This is an ERC-20 contract.
     function symbol() public override view returns (string memory){
         return _symbol;
     }
-    // Returns the symbol of the token
+    // Returns the decimals
     function decimals() public override view returns (uint8){
         return _decimal;
     }
